@@ -104,4 +104,5 @@ app.post('/build/github', async (req, res) => {
 
 
 
-app.listen(process.env.PORT || 8080, console.log(`index: Server is up and listening at ${ process.env.PORT || 8080 } port.`));
+module.exports = app;
+

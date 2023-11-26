@@ -3,9 +3,9 @@
   "name": "gcloud",
   "version": "2.3.0",
   "description": "CI/CD Pipelines",
-  "main": "src/index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node server.js",
     "test": "jest --coverage test",
     "lint": "npx eslint --fix src test"
   },
