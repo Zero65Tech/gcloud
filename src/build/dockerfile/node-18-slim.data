@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 COPY node_modules node_modules
+COPY server.js server.js
 COPY src src
 COPY data data
 COPY data-generated data-generated
