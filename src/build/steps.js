@@ -45,7 +45,6 @@ exports.npmScripts = (config) => {
           --repository=${ registry.repository } \
           --location=${ registry.region } \
           --scope=${ scope } >> .npmrc
-        echo "\n" >> .npmrc
       `
     });
 

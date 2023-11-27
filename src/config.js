@@ -1,6 +1,6 @@
 try {
 
-  module.exports = require("@zero65/config");
+  module.exports = require("@zero65tech/config");
 
 } catch (e) {
 

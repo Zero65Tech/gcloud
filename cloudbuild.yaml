@@ -8,6 +8,11 @@ steps:
       --repository=npm \
       --location=asia-south1 \
       --scope=@zero65 >> .npmrc
+    gcloud artifacts print-settings npm \
+      --project=zero65 \
+      --repository=npm \
+      --location=asia-south1 \
+      --scope=@zero65tech >> .npmrc
 
 - id: 'Npm Install'
   name: 'gcr.io/cloud-builders/npm'
