@@ -2,11 +2,11 @@ FROM node:20-slim
 
 WORKDIR /usr/src
 
-RUN ls -al
 COPY package.json .
 COPY node_modules node_modules
-COPY server.js server.js
-COPY app app
+COPY . .
+
+RUN pwd
 RUN ls -al
 
 CMD [ "npm", "start" ]
