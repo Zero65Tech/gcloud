@@ -9,7 +9,7 @@ app.use(express.json());
 const CloudBuild = new CloudBuildClient();
 
 const BuildSteps = require('./build/steps');
-const Config = require('./config');
+const Config = require("@zero65/config");
 
 
 
