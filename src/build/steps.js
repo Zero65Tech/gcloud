@@ -1,4 +1,4 @@
-const Config = require('../config');
+const Config = require("@zero65/config");
 
 
 
