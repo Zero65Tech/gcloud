@@ -136,7 +136,7 @@ exports.deployRun = (config, dockerConfig, stage) => {
       '--concurrency',   service['concurrency'],
       '--min-instances', service['min-instances'],
       '--max-instances', service['max-instances'],
-      '--set-env-vars',  `PROJECT=${ service['project'] },STAGE=${ stage }`,
+      '--set-env-vars',  `PLATFORM=GCP,PROJECT=${ service['project'] },ENV=run,STAGE=${ stage }`,
       '--service-account', service['service-account'] + '@' + service['project'] + '.iam.gserviceaccount.com'
     ]
   };
