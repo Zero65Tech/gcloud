@@ -29,6 +29,6 @@ steps:
     'run', 'deploy', 'gcloud',
     '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA',
     '--region', 'us-central1',
-    '--platform', 'managed'
+    '--platform', 'managed',
     '--service-account', 'run-gcloud@zero65-419011.iam.gserviceaccount.com'
   ]
