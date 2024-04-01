@@ -17,13 +17,13 @@ steps:
 
 - id: 'Docker Build'
   name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/zero65/docker/gcloud:$COMMIT_SHA', '-f', 'Dockerfile', '.' ]
+  args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA', '-f', 'Dockerfile', '.' ]
 
 - id: 'Docker Push'
   name: 'gcr.io/cloud-builders/docker'
   args: [ 'push', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA' ]
 
-- id: 'Run Deploy (Iowa)'
+- id: 'Run Deploy (IOWA)'
   name: 'gcr.io/cloud-builders/gcloud'
   args: [
     'run', 'deploy', 'gcloud',
