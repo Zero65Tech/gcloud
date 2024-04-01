@@ -30,8 +30,11 @@ steps:
     '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA',
     '--region', 'us-central1',
     '--platform', 'managed',
-    '--concurrency', '10', '--timeout', '5', '--max-instances', '1',
+    '--concurrency', '10',
+    '--timeout', '5',
+    '--max-instances', '1',
     '--memory', '256Mi',
     '--set-env-vars', 'PLATFORM=GCP,PROJECT=$PROJECT_ID,ENV=run,STAGE=prod',
+    '--tag', '$COMMIT_SHA',
     '--service-account', 'run-gcloud@zero65-419011.iam.gserviceaccount.com'
   ]
