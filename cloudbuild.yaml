@@ -4,7 +4,7 @@ steps:
   name: 'gcr.io/cloud-builders/gcloud'
   script: |
     gcloud artifacts print-settings npm \
-      --project=zero65 \
+      --project=$PROJECT_ID \
       --repository=npm \
       --location=asia-south1 \
       --scope=@zero65 >> .npmrc
@@ -26,22 +26,13 @@ steps:
 
 - id: 'Docker Push'
   name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'asia-south1-docker.pkg.dev/zero65/docker/gcloud:$COMMIT_SHA' ]
-
-- id: 'Run Deploy (Mum)'
-  name: 'gcr.io/cloud-builders/gcloud'
-  args: [
-    'run', 'deploy', 'gcloud',
-    '--image', 'asia-south1-docker.pkg.dev/zero65/docker/gcloud:$COMMIT_SHA',
-    '--region', 'asia-south1',
-    '--platform', 'managed'
-  ]
+  args: [ 'push', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA' ]
 
 - id: 'Run Deploy (Iowa)'
   name: 'gcr.io/cloud-builders/gcloud'
   args: [
     'run', 'deploy', 'gcloud',
-    '--image', 'asia-south1-docker.pkg.dev/zero65/docker/gcloud:$COMMIT_SHA',
+    '--image', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA',
     '--region', 'us-central1',
     '--platform', 'managed'
   ]
