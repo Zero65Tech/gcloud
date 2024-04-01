@@ -30,5 +30,6 @@ steps:
     '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA',
     '--region', 'us-central1',
     '--platform', 'managed',
+    '--set-env-vars', 'PLATFORM=GCP,PROJECT=$PROJECT_ID,ENV=run,STAGE=prod',
     '--service-account', 'run-gcloud@zero65-419011.iam.gserviceaccount.com'
   ]
