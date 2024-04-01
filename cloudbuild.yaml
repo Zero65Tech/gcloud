@@ -36,5 +36,6 @@ steps:
     '--memory', '256Mi',
     '--set-env-vars', 'PLATFORM=GCP,PROJECT=$PROJECT_ID,ENV=run,STAGE=prod',
     '--tag', '$COMMIT_SHA',
-    '--service-account', 'run-gcloud@zero65-419011.iam.gserviceaccount.com'
+    '--service-account', 'run-gcloud@zero65-419011.iam.gserviceaccount.com',
+    '--allow-unauthenticated'
   ]
