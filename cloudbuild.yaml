@@ -36,6 +36,6 @@ steps:
     '--timeout', '5',
     '--concurrency', '10',
     '--set-env-vars', 'PLATFORM=GCP,PROJECT=$PROJECT_ID,ENV=run,STAGE=prod',
-    '--service-account', 'run-gcloud@zero65-419011.iam.gserviceaccount.com',
+    '--service-account', 'run-gcloud@zero65-actions.iam.gserviceaccount.com',
     '--allow-unauthenticated'
   ]
