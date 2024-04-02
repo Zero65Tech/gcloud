@@ -35,7 +35,7 @@ steps:
     '--max-instances', '1',
     '--timeout', '5',
     '--concurrency', '10',
-    '--set-env-vars', 'PLATFORM=GCP,PROJECT=$PROJECT_ID,ENV=run,STAGE=prod',
+    '--set-env-vars', 'PLATFORM=GCP,PROJECT=zero65-actions,ENV=run,STAGE=prod',
     '--service-account', 'run-gcloud@zero65-actions.iam.gserviceaccount.com',
     '--allow-unauthenticated'
   ]
