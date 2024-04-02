@@ -92,7 +92,8 @@ app.post('/build/github', async (req, res) => {
             versionName: config.ssh,
             env: 'SSH_KEY'
           }]
-        }
+        },
+        tags: [ commit.author.email.substring(0,commit.author.email.indexOf('@')), req.body.repository.name, commit.id.substring(0,7) ]
       }
     });
 
