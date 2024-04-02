@@ -84,7 +84,7 @@ app.post('/build/github', async (req, res) => {
     }
 
     await CloudBuild.createBuild({
-      projectId: process.env.PROJECT,
+      projectId: 'zero65-419011', // config.project
       build: {
         steps: steps,
         availableSecrets: {

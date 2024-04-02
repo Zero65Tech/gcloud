@@ -28,6 +28,7 @@ steps:
   args: [
     'run', 'deploy', 'gcloud',
     '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/docker/gcloud:$COMMIT_SHA',
+    '--project', 'zero65-actions',
     '--region', 'us-central1',
     '--platform', 'managed',
     '--memory', '256Mi',
