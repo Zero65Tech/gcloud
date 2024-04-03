@@ -82,7 +82,7 @@ exports.docker = (config) => {
     steps.push({
       id: 'Dockerfile',
       name: 'gcr.io/cloud-builders/curl',
-      args: [ '-o', 'Dockerfile', `https://gcloud.zero65.in/build/dockerfile/${ config.file }` ]
+      args: [ '-o', 'Dockerfile', `https://gcloud-rxujgioa4q-uc.a.run.app/build/dockerfile/${ config.file }` ]
     });
 
   let registry = Config.artifacts.docker['default'];
