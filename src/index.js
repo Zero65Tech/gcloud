@@ -74,13 +74,12 @@ app.post('/build/github', async (req, res) => {
     if(config.docker)
       steps = steps.concat(BuildSteps.docker({ ...config.docker, tag: commit.id }));
 
-    let stage = branch == 'master' ? 'prod' : 'prod';
     let deployConfigArr = branch == 'master' ? config['deploy'] : config['deploy-test'];
     for(deployConfig of deployConfigArr) {
       if(!deployConfig.auto)
         break;
       if(deployConfig.type == 'run')
-        steps.push(BuildSteps.deployRun(deployConfig, { ...config.docker, tag: commit.id }, stage));
+        steps.push(BuildSteps.deployRun(deployConfig, { ...config.docker, tag: commit.id }));
     }
 
     await CloudBuild.createBuild({
