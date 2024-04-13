@@ -90,17 +90,24 @@ exports.docker = (config) => {
     registry = { ...registry, ...Config.artifacts.docker[config.name] };
 
   let tag = `${ registry.region }-docker.pkg.dev/${ registry.project }/${ registry.repository }/${ config.name }:${ config.tag }`;
+  let tag2 = `${ registry.region }-docker.pkg.dev/${ registry.project }/${ registry.repository }/${ config.name }:latest`;
 
   steps.push({
     id: 'Docker Build',
     name: 'gcr.io/cloud-builders/docker',
-    args: [ 'build', '-t', tag, '-f', `Dockerfile`, '.' ]
+    args: [ 'build', '-t', tag, '-t', tag2, '-f', `Dockerfile`, '.' ]
   });
 
   steps.push({
     id: 'Docker Push',
     name: 'gcr.io/cloud-builders/docker',
     args: [ 'push', tag ]
+  });
+
+  steps.push({
+    id: 'Docker Push latest',
+    name: 'gcr.io/cloud-builders/docker',
+    args: [ 'push', tag2 ]
   });
 
   return steps;
